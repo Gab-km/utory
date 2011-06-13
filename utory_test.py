@@ -27,13 +27,16 @@ utory.set_test_dynamicly(DifferentArgumentsTest,
                          'base_different_arguments_are_given',
                          different_arguments_test)
 
-class NameStartsWithTest(unittest.TestCase):
-    def test_name_starts_with_test(self, input, expected):
-        self.assertEqual(input, expected)
+# Test methods which name starts with 'test' will not finish successfully.
+# You should avoid name starting with 'test' to any test methods
+# you want to apply the utory.
+#class NameStartsWithTest(unittest.TestCase):
+#    def test_name_starts_with_test(self, input, expected):
+#        self.assertEqual(input, expected)
 
-utory.set_test_dynamicly(NameStartsWithTest,
-                         'test_name_starts_with_test',
-                         same_arguments_test)
+#utory.set_test_dynamicly(NameStartsWithTest,
+#                         'test_name_starts_with_test',
+#                         same_arguments_test)
 
 if __name__ == '__main__':
     unittest.main()
