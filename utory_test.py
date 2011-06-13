@@ -27,5 +27,13 @@ utory.set_test_dynamicly(DifferentArgumentsTest,
                          'base_different_arguments_are_given',
                          different_arguments_test)
 
+class NameStartsWithTest(unittest.TestCase):
+    def test_name_starts_with_test(self, input, expected):
+        self.assertEqual(input, expected)
+
+utory.set_test_dynamicly(NameStartsWithTest,
+                         'test_name_starts_with_test',
+                         same_arguments_test)
+
 if __name__ == '__main__':
     unittest.main()
