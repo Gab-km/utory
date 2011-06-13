@@ -3,17 +3,29 @@
 import unittest
 import utory
 
-class UtoryTest(unittest.TestCase):
-    def base_arguments_are_given(self, input, expected):
+class SameArgumentsTest(unittest.TestCase):
+    def base_same_arguments_are_given(self, input, expected):
         self.assertEqual(input, expected)
 
-case_utory_test = [{'input': 1, 'expected': 1},
-                   {'input': 'a', 'expected': 'a'},
-                   {'input': [1, 2], 'expected': [1, 2]}]
+same_arguments_test = [{'input': 1, 'expected': 1},
+                       {'input': 'a', 'expected': 'a'},
+                       {'input': [1, 2], 'expected': [1, 2]}]
 
-utory.set_test_dynamicly(UtoryTest,
-                         'base_arguments_are_given',
-                         case_utory_test)
+utory.set_test_dynamicly(SameArgumentsTest,
+                         'base_same_arguments_are_given',
+                         same_arguments_test)
+
+class DifferentArgumentsTest(unittest.TestCase):
+    def base_different_arguments_are_given(self, input, expected):
+        self.assertNotEqual(input, expected)
+
+different_arguments_test = [{'input': 1, 'expected': 2},
+                            {'input': 'a', 'expected': 'b'},
+                            {'input': [1, 2], 'expected': [2, 3]}]
+
+utory.set_test_dynamicly(DifferentArgumentsTest,
+                         'base_different_arguments_are_given',
+                         different_arguments_test)
 
 if __name__ == '__main__':
     unittest.main()
